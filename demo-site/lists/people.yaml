@@ -1,0 +1,10 @@
+- name: Ada Lovelace
+  role: Club president
+  email: ada@example.com
+- name: Grace Hopper
+  role: Treasurer
+  email: grace@example.com
+- name: Alan Turing
+  role: Member
+- name: Katherine Johnson
+  role: Member
