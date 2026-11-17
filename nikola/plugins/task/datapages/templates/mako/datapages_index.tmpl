@@ -1,0 +1,10 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl"/>
+<%block name="content">
+<header><h1>${title|h}</h1></header>
+<ul class="datapages-index">
+% for link, entry in entries:
+    <li><a href="${link}">${(entry.get('title') or entry.get('name') or link)|h}</a></li>
+% endfor
+</ul>
+</%block>

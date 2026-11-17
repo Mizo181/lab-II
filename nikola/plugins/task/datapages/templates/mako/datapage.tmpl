@@ -1,0 +1,13 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl"/>
+<%block name="content">
+<article class="datapage">
+<header><h1>${title|h}</h1></header>
+<dl>
+% for key, value in entry.items():
+    <dt>${key|h}</dt>
+    <dd>${value|h}</dd>
+% endfor
+</dl>
+</article>
+</%block>

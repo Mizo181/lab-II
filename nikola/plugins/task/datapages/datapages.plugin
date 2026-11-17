@@ -1,0 +1,12 @@
+[Core]
+name = render_datapages
+module = datapages
+
+[Documentation]
+author = Your Name
+version = 1.0
+website = https://getnikola.com/
+description = Generate one page per entry in YAML/CSV data files, plus an index.
+
+[Nikola]
+PluginCategory = Task
