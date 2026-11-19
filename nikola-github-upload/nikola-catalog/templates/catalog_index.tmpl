@@ -1,0 +1,81 @@
+{# Reuse Nikola's base page for the navigation, styles, and footer. #}
+{% extends 'base.tmpl' %}
+
+{% block content %}
+<div class="catalog-shell catalog-index">
+    <section class="catalog-hero" aria-labelledby="catalog-heading">
+        <div class="catalog-hero-copy">
+            <p class="catalog-eyebrow">
+                <span class="catalog-status-dot" aria-hidden="true"></span> Small teams. Big possibilities.
+            </p>
+            {# The |e filter escapes file contents so they appear as plain text. #}
+            <h1 id="catalog-heading">{{ catalog_title|e }}</h1>
+            <p class="catalog-lead">{{ catalog_description|e }}</p>
+            <a class="catalog-button" href="#collection">
+                Explore the collection <span aria-hidden="true">↗</span>
+            </a>
+            <div class="catalog-hero-note">
+                <span class="catalog-count">{{ catalog_count }}</span>
+                <span>student {{ 'initiative' if catalog_count == 1 else 'initiatives' }}<br>and counting</span>
+            </div>
+        </div>
+
+        <div class="catalog-hero-art" aria-hidden="true">
+            <div class="catalog-art-grid"></div>
+            <span class="catalog-art-orbit catalog-art-orbit-one"></span>
+            <span class="catalog-art-orbit catalog-art-orbit-two"></span>
+            <span class="catalog-art-star">✳</span>
+            <span class="catalog-art-dot"></span>
+            <div class="catalog-art-caption">GOOD IDEAS<br>GROW TOGETHER.</div>
+            <span class="catalog-art-stamp">CURIOUS MINDS · SHARED IDEAS</span>
+        </div>
+    </section>
+
+    <section class="catalog-collection" id="collection" aria-labelledby="collection-heading">
+        <div class="catalog-section-heading">
+            <div>
+                <p class="catalog-eyebrow">A little curiosity goes a long way</p>
+                <h2 id="collection-heading">Meet the collection<span class="catalog-heading-dot">.</span></h2>
+            </div>
+            <p class="catalog-section-count">
+                {{ catalog_count }} {{ 'initiative' if catalog_count == 1 else 'initiatives' }} to discover
+            </p>
+        </div>
+
+        {% if items %}
+        <div class="catalog-grid">
+            {# Each validated entry becomes one card linking to its own page. #}
+            {% for entry in items %}
+            <article class="catalog-card catalog-card-tone-{{ loop.index0 % 3 }}">
+                <div class="catalog-card-top">
+                    <span class="catalog-card-number">{{ '%02d'|format(loop.index) }}</span>
+                    <span class="catalog-card-mark" aria-hidden="true">{{ ['↗', '✳', '◒'][loop.index0 % 3] }}</span>
+                </div>
+                <p class="catalog-card-label">Student initiative</p>
+                <h3>
+                    <a href="{{ entry.url|e }}">{{ entry.title|e }}</a>
+                </h3>
+                <p class="catalog-card-description">{{ entry.description|e }}</p>
+                <div class="catalog-card-footer">
+                    <span>Discover the project</span>
+                    <span class="catalog-card-arrow" aria-hidden="true">↗</span>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        {# An empty input still produces a useful catalog page. #}
+        <div class="catalog-empty">
+            <span aria-hidden="true">✳</span>
+            <h3>Room for the next great idea.</h3>
+            <p>There are no initiatives in the collection yet. Check back soon.</p>
+        </div>
+        {% endif %}
+    </section>
+
+    <aside class="catalog-endnote">
+        <span aria-hidden="true">✳</span>
+        <p>Different interests. Shared curiosity.<br><strong>There is something here for you.</strong></p>
+    </aside>
+</div>
+{% endblock %}

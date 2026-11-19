@@ -1,0 +1,37 @@
+items:
+  - id: p001
+    slug: robotics-lab
+    title: Robotics Lab
+    description: >-
+      Build something that moves. Our student team explores sensors, small robots,
+      and the delightful challenge of making hardware and software work together.
+  - id: p002
+    slug: campus-garden
+    title: Campus Garden
+    description: >-
+      A greener corner of campus, grown together. We care for shared garden beds,
+      learn about seasonal planting, and turn a little patience into something worth sharing.
+  - id: p003
+    slug: open-source-circle
+    title: Open Source Circle
+    description: >-
+      Good software starts with a good question. Join a welcoming group of students
+      learning Python, contributing to open source, and helping each other ship small useful projects.
+  - id: p004
+    slug: film-society
+    title: Film Society
+    description: >-
+      A screen, a story, a conversation. We discover films from around the world
+      and make space for thoughtful discussions about the ideas that stay with us after the credits.
+  - id: p005
+    slug: repair-cafe
+    title: Repair Café
+    description: >-
+      Give everyday objects a second chapter. Bring your curiosity to our student
+      repair sessions, where we share practical skills and learn to fix things together.
+  - id: p006
+    slug: data-for-good
+    title: Data for Good
+    description: >-
+      Make numbers mean something. We turn public datasets into clear stories and
+      small tools that help us understand our campus, our city, and the world around us.

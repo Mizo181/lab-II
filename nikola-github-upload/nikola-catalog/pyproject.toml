@@ -1,0 +1,11 @@
+[project]
+name = "nikola-catalog"
+version = "0.1.0"
+description = "A data-driven CSV/YAML catalogue built with Nikola."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["integration: builds the site using the installed Nikola CLI", "watcher: starts Nikola auto to test real filesystem events"]
+

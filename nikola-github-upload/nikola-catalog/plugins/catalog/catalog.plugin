@@ -1,0 +1,13 @@
+[Core]
+Name = render_catalog
+Module = catalog
+
+[Nikola]
+PluginCategory = Task
+MinVersion = 8.3.3
+
+[Documentation]
+Author = Campus Collection team
+Version = 0.1.0
+Description = Generate a catalogue and entry pages from a validated CSV or YAML file.
+

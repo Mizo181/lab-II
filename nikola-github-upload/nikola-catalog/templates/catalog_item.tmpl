@@ -1,0 +1,53 @@
+{# Use the same base page as the index so both pages share one layout. #}
+{% extends 'base.tmpl' %}
+
+{% block content %}
+<div class="catalog-shell catalog-detail">
+    <nav class="catalog-breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ catalog_index_url|e }}">
+            <span aria-hidden="true">←</span> Back to the collection
+        </a>
+    </nav>
+
+    <article class="catalog-detail-card" aria-labelledby="item-heading">
+        <header class="catalog-detail-header">
+            <p class="catalog-eyebrow">
+                <span class="catalog-status-dot" aria-hidden="true"></span> Student initiative
+            </p>
+            {# |e displays file values as text instead of treating them as HTML. #}
+            <h1 id="item-heading">{{ item.title|e }}</h1>
+            <p class="catalog-detail-id">Collection ID <span>{{ item.id|e }}</span></p>
+        </header>
+
+        <div class="catalog-detail-body">
+            <div class="catalog-detail-label">
+                <span aria-hidden="true">↗</span>
+                <h2>About this initiative</h2>
+            </div>
+            <div class="catalog-detail-description">
+                {% if item.description %}
+                <p>{{ item.description|e }}</p>
+                {% else %}
+                {# Description is optional, so provide a readable fallback. #}
+                <p>More about this initiative will be shared soon.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <footer class="catalog-detail-footer">
+            <div>
+                <p class="catalog-eyebrow">Keep exploring</p>
+                <p>Find your next spark of inspiration.</p>
+            </div>
+            <a class="catalog-button" href="{{ catalog_index_url|e }}">
+                All initiatives <span aria-hidden="true">↗</span>
+            </a>
+        </footer>
+    </article>
+
+    <aside class="catalog-endnote">
+        <span aria-hidden="true">✳</span>
+        <p>Part of <strong>{{ catalog_title|e }}</strong><br>A place for ideas to find their people.</p>
+    </aside>
+</div>
+{% endblock %}
